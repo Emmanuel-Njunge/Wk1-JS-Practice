@@ -1,19 +1,22 @@
-function generateGrade(marks) {
-    // If marks are greater than 79, return grade "A"
-    if (marks > 79) return "A"; 
-    
-    // If marks are between 60 and 79, return grade "B"
-    else if (marks >= 60) return "B"; 
-    
-    // If marks are between 50 and 59, return grade "C"
-    else if (marks >= 50) return "C"; 
-    
-    // If marks are between 40 and 49, return grade "D"
-    else if (marks >= 40) return "D"; 
-    
-    // If marks are less than 40, return grade "E"
-    else return "E"; 
+function netSalaryCalculator(basicSalary, benefits) {
+    // Calculate Gross Salary
+    let grossSalary = basicSalary + benefits;
+
+    //  Calculate deductions
+    let paye = 0.3 * grossSalary;  
+    let nhif = 0.015 * grossSalary;
+    let nssf = 0.06 * grossSalary;
+
+    // Net Salary Calculation
+    let netSalary = grossSalary - (paye + nhif + nssf);
+
+    // Output results
+    console.log(`Gross Salary: ${grossSalary}`);
+    console.log(`PAYE: ${paye}`);
+    console.log(`NHIF: ${nhif}`);
+    console.log(`NSSF: ${nssf}`);
+    console.log(`Net Salary: ${netSalary}`);
 }
 
-// Test the function
-console.log(generateGrade(76)); // Output: "B"
+// Example Test
+netSalaryCalculator(50000, 10000);

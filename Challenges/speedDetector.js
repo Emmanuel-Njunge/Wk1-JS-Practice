@@ -1,19 +1,22 @@
-function generateGrade(marks) {
-  // If marks are greater than 79, return grade "A"
-  if (marks > 79) return "A"; 
-  
-  // If marks are between 60 and 79, return grade "B"
-  else if (marks >= 60) return "B"; 
-  
-  // If marks are between 50 and 59, return grade "C"
-  else if (marks >= 50) return "C"; 
-  
-  // If marks are between 40 and 49, return grade "D"
-  else if (marks >= 40) return "D"; 
-  
-  // If marks are less than 40, return grade "E"
-  else return "E"; 
+function speedDetector(speed) {
+  const speedLimit = 70;
+  const kmPerPoint = 5;
+
+  if (speed <= speedLimit) {
+    console.log("Ok");
+    return;
+  }
+
+  // Correctly calculate points (whole numbers)
+  let points = Math.floor((speed - speedLimit) / kmPerPoint);
+
+  if (points > 12) {
+    console.log("License suspended");
+  } else {
+    console.log(`Points: ${points}`);
+  }
 }
 
-// Test the function
-console.log(generateGrade(76)); // Output: "B"
+
+speedDetector(80);  // Expected: "Points: 2"
+

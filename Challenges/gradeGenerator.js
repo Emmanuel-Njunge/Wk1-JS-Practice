@@ -1,11 +1,22 @@
 function generateGrade(marks) {
-    // Check if marks are greater than 79, assign grade "A"
-    if (marks > 79) return "A"; 
-    
-    // Check if marks are between 60 and 79 , assign grade "B"
-    else if (marks >= 60) return "B"; 
-    
-    // Check if marks are between 50 and 59 , assign grade "C"
-    else if (marks >= 49) return "C"; 
-    
-    // Check if marks are between 40 and 49 , assign grade "D
+    // Check if the input marks are valid
+    if (marks < 0 || marks > 100) {
+      console.log("Please enter marks between 0 and 100."); // Marks must be within the correct range
+      return; // Stop the function if marks are invalid
+    }
+  
+   
+    if (marks > 79) {
+      console.log("Grade: A"); // A for marks above 79
+    } else if (marks >= 60) {
+      console.log("Grade: B"); // B for marks between 60 and 79
+    } else if (marks >= 50) {
+      console.log("Grade: C"); // C for marks between 50 and 59
+    } else if (marks >= 40) {
+      console.log("Grade: D"); // D for marks between 40 and 49
+    } else {
+      console.log("Grade: E"); // E for marks less than 40
+    }
+  }
+  generateGrade(85); // Example:  prints "Grade: A"
+ 
